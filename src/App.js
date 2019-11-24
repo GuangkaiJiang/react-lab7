@@ -1,9 +1,12 @@
 import React from 'react';
-import Lab6 from './Employees'
+import Employees from './Employees';
+import Form from './Form'
 function App() {
   return (
     <div>
-      <Lab6 />
+      <Form />
+      
+
     </div>
   );
 }
