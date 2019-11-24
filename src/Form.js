@@ -50,7 +50,8 @@ class Form extends React.Component {
             break;
         }
         this.setState({formErrors: formErrors,
-                        emailValid: emailValid
+                        emailValid: emailValid,
+                        phoneValid: phoneValid
                       }, this.validateForm);
       }
 
@@ -72,7 +73,7 @@ class Form extends React.Component {
           {this.state.age>=18?"Email":"Parent Phone No" }
             <input name={this.state.age>=18?"email":"parentPhoneNo" } type="text" value={this.state.age>=18?this.state.emaiil:this.state.parentPhoneNo} onChange={this.handleChange} />
           </label>
-          <input type="submit" value="Submit" />
+          <input disabled={this.state.age>=18?!this.state.emailValid:!this.state.phoneValid} type="submit" value="Submit" />
           <div className="panel panel-default">
           {this.state.age>=18?this.state.formErrors.email:this.state.formErrors.phone}
         </div>
